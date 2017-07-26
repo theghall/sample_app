@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
   attr_reader :remember_token
   attr_accessor :activation_token, :reset_token
   before_save :downcase_email
